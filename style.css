@@ -1,5 +1,279 @@
 /* Legacy .service-box removed; using .service-card design instead */
 
+/* ══════════════════════════════════════════
+   JOUR PAGE
+══════════════════════════════════════════ */
+.jour-page {
+  background: #eef2f7;
+}
+
+/* Hero */
+.jour-hero {
+  background: linear-gradient(135deg, #0d1b5e 0%, #1f3683 55%, #2a4e9f 100%);
+  color: #fff;
+  padding: 3.5rem 1rem 3rem;
+  text-align: center;
+}
+.jour-hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.jour-hero-badge {
+  display: inline-block;
+  background: #e67e00;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+.jour-hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  margin: 0 0 0.7rem;
+  line-height: 1.2;
+  color: #fff;
+}
+.jour-hero-lead {
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  margin: 0 0 1.6rem;
+  color: #c8d6f5;
+}
+.jour-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #e67e00;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: 0.85rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(230, 126, 0, 0.45);
+  transition: background 0.2s, transform 0.2s;
+}
+.jour-call-btn:hover {
+  background: #c96f00;
+  transform: translateY(-2px);
+}
+.jour-hero-sub {
+  margin: 1rem 0 1.4rem;
+  font-size: 0.95rem;
+  color: #b0c2e8;
+}
+.jour-trust-bar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.4rem;
+  font-size: 0.93rem;
+  color: #c8d6f5;
+}
+
+/* Common section wrapper */
+.jour-section {
+  padding: 3rem 1rem;
+}
+.jour-section:nth-child(even) {
+  background: #fff;
+}
+.jour-section-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.jour-section h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  color: #0d1b5e;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+.jour-section-lead {
+  text-align: center;
+  color: #4b5e82;
+  margin: 0 0 2rem;
+  font-size: 1rem;
+}
+
+/* Problem grid */
+.jour-problem-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.jour-problem-card {
+  background: #f0f4fc;
+  border: 1px solid #d4e0f7;
+  border-radius: 12px;
+  padding: 1.1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #1e357a;
+  text-align: center;
+  font-size: 0.95rem;
+}
+.jour-problem-icon {
+  font-size: 1.8rem;
+}
+.jour-mid-cta {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Steps */
+.jour-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.jour-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: #f0f4fc;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+}
+.jour-step-num {
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: #1f3683;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.jour-step strong {
+  display: block;
+  color: #0d1b5e;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+.jour-step p {
+  margin: 0;
+  color: #4b5e82;
+  font-size: 0.95rem;
+}
+
+/* Trust grid */
+.jour-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.5rem;
+}
+.jour-trust-card {
+  background: #f0f4fc;
+  border-radius: 14px;
+  padding: 1.4rem 1.1rem;
+  text-align: center;
+  border: 1px solid #d4e0f7;
+}
+.jour-trust-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.jour-trust-card h3 {
+  font-size: 1rem;
+  color: #0d1b5e;
+  margin: 0 0 0.4rem;
+}
+.jour-trust-card p {
+  font-size: 0.9rem;
+  color: #4b5e82;
+  margin: 0;
+}
+
+/* Areas */
+.jour-areas {
+  background: #fff;
+}
+.jour-areas-note {
+  text-align: center;
+  color: #4b5e82;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+.jour-areas-tel {
+  color: #e67e00;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.jour-areas-tel:hover {
+  text-decoration: underline;
+}
+
+/* Bottom CTA */
+.jour-bottom-cta {
+  background: linear-gradient(135deg, #0d1b5e 0%, #1f3683 100%);
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.jour-bottom-cta .jour-section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.jour-bottom-cta h2 {
+  color: #fff;
+  margin: 0;
+}
+.jour-bottom-cta p {
+  color: #c8d6f5;
+  margin: 0;
+}
+.jour-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+.jour-bottom-cta .akut-back-link {
+  color: #c8d6f5;
+}
+.jour-bottom-cta .akut-back-link:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .jour-problem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .jour-trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .jour-step {
+    flex-direction: column;
+  }
+}
+
+/* ── end jour page ── */
+
 @media (min-width: 700px) {
     .services-grid {
         grid-template-columns: 1fr 1fr;
@@ -350,6 +624,18 @@ body.topbar-fixed-padding {
     background: #c62828;
 }
 
+.topbar-right .jour-btn {
+    background: #e67e00;
+    color: #fff;
+    padding: 0.2rem 0.9rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.topbar-right .jour-btn:hover {
+    background: #b86200;
+}
+
 .topbar-right .prices-terms {
     background: #374151;
     color: #fff;
@@ -392,7 +678,8 @@ body.topbar-fixed-padding {
     .logo { transform: scale(1.14); }
     .topbar-right { gap: 8px; }
     .topbar-right .contact,
-    .topbar-right .urgent-help {
+    .topbar-right .urgent-help,
+    .topbar-right .jour-btn {
         font-size: 0.9rem;
         padding: 0.18rem 0.7rem;
     }
@@ -428,7 +715,8 @@ body.topbar-fixed-padding {
     }
 
     .topbar-right .contact,
-    .topbar-right .urgent-help {
+    .topbar-right .urgent-help,
+    .topbar-right .jour-btn {
         font-size: 0.78rem;
         padding: 0.2rem 0.52rem;
         border-radius: 7px;
@@ -1807,7 +2095,8 @@ main {
     }
 
     .topbar-right .contact,
-    .topbar-right .urgent-help {
+    .topbar-right .urgent-help,
+    .topbar-right .jour-btn {
         font-size: 0.72rem;
         padding: 0.18rem 0.42rem;
         border-radius: 6px;
