@@ -6,7 +6,7 @@
   <title>Boka tjänst — Kraft Nordic Service VSS AB</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="boka-page">
   <header>
     <div class="topbar">
       <div class="topbar-left">
@@ -21,15 +21,39 @@
         <a href="akut-vvs.html" class="urgent-help" aria-label="Akut hjälp">Akut hjälp</a>
       </div>    </div>
   </header>
-  <main>
+  <main class="booking-main">
     <section class="booking-section background-boka">
-      <div class="booking-card">
-        <h1>Boka en tjänst</h1>
-        <p class="booking-lead">
-          Fyll i uppgifterna nedan så kontaktar vi dig för att bekräfta tid eller lämna offert.
-        </p>
+      <div class="booking-layout">
+        <aside class="booking-intro" aria-label="Information om bokning">
+          <span class="booking-eyebrow">Snabb bokning</span>
+          <h1>Boka en tjänst på under 1 minut</h1>
+          <p class="booking-intro-lead">
+            Fyll i formuläret så skickas din bokningsförfrågan direkt till oss via e-post.
+            Vi kontaktar dig för att bekräfta tid eller lämna offert.
+          </p>
 
-        <form class="booking-form">
+          <ul class="booking-intro-points">
+            <li>Certifierade montörer</li>
+            <li>Tydlig prisinformation innan start</li>
+            <li>ROT-hantering om du vill</li>
+          </ul>
+
+          <div class="booking-contact-box">
+            <h2>Vill du hellre kontakta oss direkt?</h2>
+            <p>
+              Telefon: <a href="tel:0739140177">073-914 01 77</a><br>
+              E-post: <a href="mailto:kraftnordicservice@gmail.com">kraftnordicservice@gmail.com</a>
+            </p>
+          </div>
+        </aside>
+
+        <div class="booking-card">
+          <h2>Din bokningsförfrågan</h2>
+          <p class="booking-lead">
+            Alla uppgifter nedan skickas till <a href="mailto:kraftnordicservice@gmail.com">kraftnordicservice@gmail.com</a>.
+          </p>
+
+          <form class="booking-form">
           <input type="hidden" name="to_email" value="kraftnordicservice@gmail.com">
           <input type="hidden" name="reply_to" value="">
           
@@ -107,7 +131,7 @@
               <option>Montering av innerdörr inkl. karm - från 1 995 kr</option>
               <option>Montering lås - från 695 kr</option>
               <option>Montering av ytterdörr inkl. karm - från 4 490 kr</option>
-              <option>Hembesök konsultation offert - från 495 kr</option>
+              <option>Hembesök konsultation offert - boka</option>
             </select>
           </div>
 
@@ -169,9 +193,10 @@
             ⏱ Vi återkommer vanligtvis inom 24 timmar<br>
             ✔ Inget bindande – du bekräftar alltid först
           </p>
-        </form>
+          </form>
 
-        <a href="index.html#tjänster" class="back-link">← Tillbaka till tjänster</a>
+          <a href="index.html#tjänster" class="back-link">← Tillbaka till tjänster</a>
+        </div>
       </div>
     </section>
   </main>
