@@ -56,6 +56,7 @@
           <form class="booking-form">
           <input type="hidden" name="to_email" value="kraftnordic@gmail.com">
           <input type="hidden" name="reply_to" value="">
+          <input type="hidden" name="rot" value="Nej">
           
           <!-- Personlig information -->
           <h3>Personlig information</h3>
@@ -101,7 +102,7 @@
           </div>
 
           <!-- Tjänst -->
-          <h3>Tjänst</h3>
+          <h3>Typ av jobb</h3>
           <div class="form-full">
             <label for="service">Välj tjänst *</label>
             <select id="service" name="service" required>
@@ -140,31 +141,38 @@
             <textarea id="message" name="message" placeholder="Beskriv kort vad du behöver hjälp med"></textarea>
           </div>
 
-          <!-- Kunduppgifter för ROT -->
-          <h3>Kunduppgifter</h3>
+          <!-- ROT Information -->
           <div class="form-full">
-            <label for="personnummer">Personnummer (för ROT-avdrag)</label>
-            <input type="text" id="personnummer" name="personnummer" placeholder="YYYYMMDD-XXXX">
-            <p class="form-meta">Behövs endast om du vill kunna dra av ROT-kostnader</p>
-          </div>
-
-          <div class="form-full">
-            <label for="rot-info">
+            <label for="rot-checkbox">
               <input type="checkbox" id="rot-checkbox" name="rot-checkbox">
-              Jag önskar att Kraft Nordic Service hanterar ROT-avdraget för mig
+              Jag vill ansöka om ROT-avdrag
             </label>
+            <p class="form-meta">ROT-uppgifterna visas bara om du väljer att ansöka om avdrag.</p>
           </div>
 
-          <!-- ROT Information (visas bara om checkbox är markerad) -->
-          <div id="rot-section" style="display:none;">
+          <div id="rot-section" hidden>
             <h3>Uppgifter för ROT</h3>
             <div class="form-full">
-              <label for="property">Fastighetsbeteckning</label>
-              <input type="text" id="property" name="property" placeholder="T.ex. Stockholms stad 1:23">
+              <label for="personnummer">Personnummer *</label>
+              <input type="text" id="personnummer" name="personnummer" placeholder="ÅÅÅÅMMDD-XXXX" autocomplete="off">
             </div>
             <div class="form-full">
-              <label for="apartment">Lägenhetsnummer (om lägenhet)</label>
-              <input type="text" id="apartment" name="apartment" placeholder="T.ex. 1401" maxlength="4">
+              <label for="housing-type">Typ av bostad *</label>
+              <select id="housing-type" name="housing_type">
+                <option value="">Välj typ av bostad</option>
+                <option value="Småhus (villa/radhus)">Småhus (villa/radhus)</option>
+                <option value="Bostadsrätt">Bostadsrätt</option>
+              </select>
+            </div>
+            <div class="form-full" id="house-fields" hidden>
+              <label for="property">Fastighetsbeteckning *</label>
+              <input type="text" id="property" name="property" placeholder="Fastighetsbeteckning">
+            </div>
+            <div class="form-full" id="housing-association-fields" hidden>
+              <label for="organization-number">Bostadsrättsföreningens organisationsnummer *</label>
+              <input type="text" id="organization-number" name="organization_number" placeholder="Organisationsnummer">
+              <label for="apartment">Lägenhetsnummer *</label>
+              <input type="text" id="apartment" name="apartment" placeholder="Lägenhetsnummer">
             </div>
           </div>
 
@@ -283,8 +291,6 @@
   </script>
 </body>
 </html>
-
-
 
 
 

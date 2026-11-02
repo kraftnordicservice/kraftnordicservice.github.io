@@ -12,8 +12,6 @@ window.addEventListener('scroll', function() {
 
 // Toggle search field in topbar
 document.addEventListener('DOMContentLoaded', function() {
-    // ensure body has padding to account for fixed topbar initially
-    document.body.classList.add('topbar-fixed-padding');
     const searchForm = document.querySelector('.search-form');
     if (!searchForm) return;
     const toggle = searchForm.querySelector('.search-toggle');
@@ -131,16 +129,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Toggle ROT information section based on checkbox
 document.addEventListener('DOMContentLoaded', function() {
+    const bookingForm = document.querySelector('.booking-form');
     const rotCheckbox = document.querySelector('#rot-checkbox');
     const rotSection = document.querySelector('#rot-section');
-    if (!rotCheckbox || !rotSection) return;
+    if (!bookingForm || !rotCheckbox || !rotSection) return;
+    const housingType = bookingForm.querySelector('#housing-type');
+    const houseFields = bookingForm.querySelector('#house-fields');
+    const housingAssociationFields = bookingForm.querySelector('#housing-association-fields');
+    const rotValue = bookingForm.querySelector('[name="rot"]');
+    const personalNumber = bookingForm.querySelector('[name="personnummer"]');
+    const property = bookingForm.querySelector('[name="property"]');
+    const organizationNumber = bookingForm.querySelector('[name="organization_number"]');
+    const apartmentNumber = bookingForm.querySelector('[name="apartment"]');
 
     function updateROTVisibility() {
-        rotSection.style.display = rotCheckbox.checked ? 'block' : 'none';
+        const rotRequested = rotCheckbox.checked;
+        const isHouse = rotRequested && housingType.value === 'Småhus (villa/radhus)';
+        const isApartment = rotRequested && housingType.value === 'Bostadsrätt';
+
+        rotSection.hidden = !rotRequested;
+        rotValue.value = rotRequested ? 'Ja' : 'Nej';
+        personalNumber.required = rotRequested;
+        housingType.required = rotRequested;
+        houseFields.hidden = !isHouse;
+        housingAssociationFields.hidden = !isApartment;
+        property.required = isHouse;
+        organizationNumber.required = isApartment;
+        apartmentNumber.required = isApartment;
+
+        if (!rotRequested) {
+            housingType.value = '';
+            personalNumber.value = '';
+        }
+        if (!isHouse) property.value = '';
+        if (!isApartment) {
+            organizationNumber.value = '';
+            apartmentNumber.value = '';
+        }
     }
 
     updateROTVisibility();
     rotCheckbox.addEventListener('change', updateROTVisibility);
+    housingType.addEventListener('change', updateROTVisibility);
+    bookingForm.addEventListener('reset', function() {
+        setTimeout(updateROTVisibility, 0);
+    });
 });
 
 // Homepage: show first 8 services, reveal the rest on demand

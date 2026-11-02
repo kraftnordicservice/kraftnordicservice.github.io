@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="contact-page">
   <header>
     <div class="topbar">
       <div class="topbar-left">
@@ -30,7 +30,9 @@
       <div class="contact-box">
 
         <div class="contact-left">
-          <h2>Kontaktinformation</h2>
+          <span class="booking-eyebrow">Stockholm med omnejd</span>
+          <h1>Kontaktinformation</h1>
+          <p class="contact-intro-lead">Berätta vad du behöver hjälp med så återkommer vi så snart vi kan.</p>
 
           <div class="contact-item">
             <span>📍</span>
@@ -72,7 +74,7 @@
         <div class="contact-right">
           <h2>Hör av dig!</h2>
 
-          <form>
+          <form class="contact-form">
             <input type="hidden" name="to_email" value="kraftnordic@gmail.com">
             <input type="hidden" name="reply_to" value="">
             <input type="hidden" name="lastname" value="">
@@ -82,21 +84,28 @@
             <input type="hidden" name="property" value="">
             <input type="hidden" name="apartment" value="">
 
-            <label for="contact-name">Namn</label>
-            <input id="contact-name" name="firstname" type="text" placeholder="Ditt namn" autocomplete="name" required>
-
-            <label for="contact-email">E-post</label>
-            <input id="contact-email" name="email" type="email" placeholder="Din e-post" autocomplete="email" required>
-
-            <label for="contact-phone">Telefon</label>
-            <input id="contact-phone" name="phone" type="tel" placeholder="Ditt telefonnummer" autocomplete="tel">
-
-            <label for="contact-message">Meddelande</label>
-            <textarea id="contact-message" name="message" placeholder="Beskriv kort vad du behöver hjälp med" required></textarea>
+            <div class="contact-form-grid">
+              <div>
+                <label for="contact-name">Namn</label>
+                <input id="contact-name" name="firstname" type="text" placeholder="Ditt namn" autocomplete="name" required>
+              </div>
+              <div>
+                <label for="contact-email">E-post</label>
+                <input id="contact-email" name="email" type="email" placeholder="Din e-post" autocomplete="email" required>
+              </div>
+              <div>
+                <label for="contact-phone">Telefon</label>
+                <input id="contact-phone" name="phone" type="tel" placeholder="Ditt telefonnummer" autocomplete="tel">
+              </div>
+              <div class="contact-form-full">
+                <label for="contact-message">Meddelande</label>
+                <textarea id="contact-message" name="message" placeholder="Beskriv kort vad du behöver hjälp med" required></textarea>
+              </div>
+            </div>
 
             <button type="submit" class="btn btn-book">Skicka förfrågan</button>
             <p class="form-status" aria-live="polite" hidden></p>
-            <p class="form-meta">Vi skickar din förfrågan direkt till oss när formuläret skickas.</p>
+            <p class="form-meta">Din förfrågan skickas till oss. Vi återkommer så snart vi kan.</p>
           </form>
         </div>
 
@@ -128,6 +137,7 @@
       </div>
     </div>
   </footer>
+  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function() {
@@ -185,7 +195,3 @@
   </script>
 </body>
 </html>
-
-
-
-
